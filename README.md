@@ -10,3 +10,10 @@ Show all records from the orders table.
 SELECT * 
 FROM orders;
 ```
+## Question 2
+Show all pizza names available in the dataset.
+```SELECT 
+    name
+FROM
+    pizza_types;
+```
