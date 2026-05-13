@@ -12,7 +12,8 @@ FROM orders;
 ```
 ## Question 2
 Show all pizza names available in the dataset.
-```SELECT 
+```sql
+SELECT 
     name
 FROM
     pizza_types;
