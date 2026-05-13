@@ -18,3 +18,11 @@ SELECT
 FROM
     pizza_types;
 ```
+## Question 3
+Find the total number of orders placed.
+```sql
+SELECT 
+    COUNT(order_details_id)
+FROM
+    order_details;
+```
