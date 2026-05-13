@@ -75,7 +75,8 @@ SELECT
 FROM
     pizza_types AS pt
         JOIN
-    pizzas AS p ON pt.pizza_type_id = p.pizza_type_id;
+    pizzas AS p
+ ON pt.pizza_type_id = p.pizza_type_id;
 ```
 
 
