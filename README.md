@@ -22,7 +22,19 @@ FROM
 Find the total number of orders placed.
 ```sql
 SELECT 
-    COUNT(order_details_id)
+    COUNT(order_id)
 FROM
     order_details;
 ```
+## question 4
+Find the total number of pizzas sold.
+```sql
+select
+ count(order_details_id)
+from
+order_details;
+```
+
+
+
+
