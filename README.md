@@ -59,6 +59,24 @@ SELECT
 FROM
     orders;
 ```
+## question 8
+Find the latest order date.
+```sql
+SELECT 
+    MAX(date)
+FROM
+    orders;
+```
+## question 9
+Display all pizzas with their prices.
+```sql
+SELECT 
+    pt.name, p.price
+FROM
+    pizza_types AS pt
+        JOIN
+    pizzas AS p ON pt.pizza_type_id = p.pizza_type_id;
+```
 
 
 
