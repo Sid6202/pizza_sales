@@ -22,7 +22,7 @@ FROM
 Find the total number of orders placed.
 ```sql
 SELECT 
-    COUNT(order_id)
+    COUNT(order_id) as total_orders
 FROM
     order_details;
 ```
@@ -30,7 +30,7 @@ FROM
 Find the total number of pizzas sold.
 ```sql
 select
- count(order_details_id)
+ sum(quantity) as total_pizza_sold
 from
 order_details;
 ```
