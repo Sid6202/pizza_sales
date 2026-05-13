@@ -34,6 +34,41 @@ select
 from
 order_details;
 ```
+## question 5
+List all pizza sizes available.
+```sql
+SELECT DISTINCT
+    size
+FROM
+    pizzas;
+```
+## question 6
+Show the distinct pizza categories.
+```sql
+SELECT DISTINCT
+    category AS pizza_category
+FROM
+    pizza_types
+    order by pizza_category asc;
+```
+## question 7
+Find the earliest order date.
+```sql
+SELECT 
+    MIN(date)
+FROM
+    orders;
+```
+
+
+
+
+
+
+
+
+
+
 
 
 
