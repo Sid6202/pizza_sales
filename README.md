@@ -5,4 +5,4 @@ and analyze sales performance using real-world data.
 
 ---- 1.Show all records from the orders table ----
 
-```select * from orders;
+```select * from orders;```
