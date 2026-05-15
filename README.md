@@ -122,17 +122,34 @@ FROM
     GROUP BY od.order_id)
         AS avg_order_value;
 ```
-## Question
+## Question 13
 ```sql
 13. Find the top 5 most ordered pizzas.
 
-select p. pizza_id , sum(od.quantity) as quantity from pizzas as p
-join order_details as od
+SELECT
+      p. pizza_id , sum(od.quantity) as quantity
+FROM pizzas as p
+      JOIN order_details as od
 on p.pizza_id =od.pizza_id
-group by p.pizza_id
-order by quantity desc
-limit 5
+Group By p.pizza_id
+Order By quantity DESC
+LIMIT 5
  ;
+```
+## Question 14
+```sql
+14. Find the least ordered pizzas.
+
+SELECT
+    p.pizza_id, SUM(od.quantity) AS quantity
+FROM
+    pizzas AS p
+        JOIN
+    order_details AS od ON p.pizza_id = od.pizza_id
+GROUP BY p.pizza_id
+ORDER BY quantity ASC
+LIMIT 1
+;
 ```
 
 
