@@ -181,4 +181,19 @@ GROUP BY pt.category
 ORDER BY revenue DESC;
 
 ```
+## Question 17
+```sql
+17. Find the busiest day based on number of orders.
+
+    SELECT 
+    O.date, SUM(OD.quantity) AS Quantity
+FROM
+    order_details AS OD
+        JOIN
+    orders AS O ON OD.order_id = O.order_id
+GROUP BY o.date
+ORDER BY quantity DESC
+LIMIT 1;
+```
+
 
