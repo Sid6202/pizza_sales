@@ -111,7 +111,16 @@ FROM
 ```sql
 12. Find the average order value.
 
-
+SELECT 
+    ROUND(AVG(total_order_values), 2)
+FROM
+    (SELECT 
+        ROUND(SUM(od.quantity * p.price), 2) AS total_order_values
+    FROM
+        pizzas AS p
+    JOIN order_details AS od ON p.pizza_id = od.pizza_id
+    GROUP BY od.order_id)
+        AS avg_order_value;
 
 
 
