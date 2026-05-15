@@ -4,14 +4,14 @@ The goal of this project is to practice SQL queries, improve business understand
 and analyze sales performance using real-world data.
 
 ## Question 1
-Show all records from the orders table.
+1. Show all records from the orders table.
 
 ```sql
 SELECT * 
 FROM orders;
 ```
 ## Question 2
-Show all pizza names available in the dataset.
+2. Show all pizza names available in the dataset.
 ```sql
 SELECT 
     name
@@ -19,7 +19,7 @@ FROM
     pizza_types;
 ```
 ## Question 3
-Find the total number of orders placed.
+3. Find the total number of orders placed.
 ```sql
 SELECT 
     COUNT(order_id) as total_orders
@@ -27,7 +27,7 @@ FROM
     order_details;
 ```
 ## Question 4
-Find the total number of pizzas sold.
+4. Find the total number of pizzas sold.
 ```sql
 select
  sum(quantity) as total_pizza_sold
@@ -35,7 +35,7 @@ from
 order_details;
 ```
 ## Question 5
-List all pizza sizes available.
+5. List all pizza sizes available.
 ```sql
 SELECT DISTINCT
     size
@@ -43,7 +43,7 @@ FROM
     pizzas;
 ```
 ## Question 6
-Show the distinct pizza categories.
+6. Show the distinct pizza categories.
 ```sql
 SELECT DISTINCT
     category AS pizza_category
@@ -52,7 +52,7 @@ FROM
     order by pizza_category asc;
 ```
 ## Question 7
-Find the earliest order date.
+7. Find the earliest order date.
 ```sql
 SELECT 
     MIN(date)
@@ -60,7 +60,7 @@ FROM
     orders;
 ```
 ## Question 8
-Find the latest order date.
+8. Find the latest order date.
 ```sql
 SELECT 
     MAX(date)
@@ -68,7 +68,7 @@ FROM
     orders;
 ```
 ## Question 9
-Display all pizzas with their prices.
+9. Display all pizzas with their prices.
 ```sql
 SELECT 
     pt.name, p.price
@@ -79,15 +79,15 @@ FROM
  ON pt.pizza_type_id = p.pizza_type_id;
 ```
 ## Question 10
-Count how many unique pizza types exist.
+10. Count how many unique pizza types exist.
 ```sql
-SELECT 
+SELECT
     COUNT(pizza_type_id) as pizza_types
 FROM
     pizza_types;
 ```
 ## Question 11
- Find total revenue generated from pizza sales.
+11. Find total revenue generated from pizza sales.
 ```sql
 SELECT 
     round(SUM(od.quantity * p.price),2)as Total_revenue
@@ -97,7 +97,9 @@ FROM
     pizzas AS p ON od.pizza_id = p.pizza_id
     ;
 ```
-
+## Question 12
+```sql
+12. Find the average order value.
 
 
 
