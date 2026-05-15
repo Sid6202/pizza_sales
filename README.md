@@ -195,5 +195,18 @@ GROUP BY o.date
 ORDER BY quantity DESC
 LIMIT 1;
 ```
+## Question 18
+``` sql
+18. Find the busiest hour of the day.
 
+SELECT 
+    HOUR(o.time), SUM(OD.quantity) AS Quantity
+FROM
+    order_details AS OD
+        JOIN
+    orders AS O ON OD.order_id = O.order_id
+GROUP BY HOUR(o.time)
+ORDER BY quantity DESC
+LIMIT 1;
+```
 
