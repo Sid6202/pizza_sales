@@ -151,7 +151,19 @@ ORDER BY quantity ASC
 LIMIT 1
 ;
 ```
+## Question 15
+``` sql
+15. Calculate total quantity sold for each pizza size.
 
+SELECT 
+    p.size, SUM(od.quantity) AS quantity
+FROM
+    pizzas AS p
+        JOIN
+    order_details AS od ON p.pizza_id = od.pizza_id
+GROUP BY p.size
+ORDER BY quantity DESC;
+```
 
 
 
