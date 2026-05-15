@@ -4,47 +4,52 @@ The goal of this project is to practice SQL queries, improve business understand
 and analyze sales performance using real-world data.
 
 ## Question 1
+```sql
 1. Show all records from the orders table.
 
-```sql
 SELECT * 
 FROM orders;
 ```
 ## Question 2
-2. Show all pizza names available in the dataset.
 ```sql
+2. Show all pizza names available in the dataset.
+
 SELECT 
     name
 FROM
     pizza_types;
 ```
 ## Question 3
-3. Find the total number of orders placed.
 ```sql
+3. Find the total number of orders placed.
+
 SELECT 
     COUNT(order_id) as total_orders
 FROM
     order_details;
 ```
 ## Question 4
-4. Find the total number of pizzas sold.
 ```sql
+4. Find the total number of pizzas sold.
+
 select
  sum(quantity) as total_pizza_sold
 from
 order_details;
 ```
 ## Question 5
-5. List all pizza sizes available.
 ```sql
+5. List all pizza sizes available.
+
 SELECT DISTINCT
     size
 FROM
     pizzas;
 ```
 ## Question 6
-6. Show the distinct pizza categories.
 ```sql
+6. Show the distinct pizza categories.
+
 SELECT DISTINCT
     category AS pizza_category
 FROM
@@ -52,24 +57,27 @@ FROM
     order by pizza_category asc;
 ```
 ## Question 7
-7. Find the earliest order date.
 ```sql
+7. Find the earliest order date.
+
 SELECT 
     MIN(date)
 FROM
     orders;
 ```
 ## Question 8
-8. Find the latest order date.
 ```sql
+8. Find the latest order date.
+
 SELECT 
     MAX(date)
 FROM
     orders;
 ```
 ## Question 9
-9. Display all pizzas with their prices.
 ```sql
+9. Display all pizzas with their prices.
+
 SELECT 
     pt.name, p.price
 FROM
@@ -79,16 +87,18 @@ FROM
  ON pt.pizza_type_id = p.pizza_type_id;
 ```
 ## Question 10
-10. Count how many unique pizza types exist.
 ```sql
+10. Count how many unique pizza types exist.
+
 SELECT
     COUNT(pizza_type_id) as pizza_types
 FROM
     pizza_types;
 ```
 ## Question 11
-11. Find total revenue generated from pizza sales.
 ```sql
+11. Find total revenue generated from pizza sales.
+
 SELECT 
     round(SUM(od.quantity * p.price),2)as Total_revenue
 FROM
