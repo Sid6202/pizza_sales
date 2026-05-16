@@ -300,6 +300,19 @@ FROM
     order by p.price desc
     limit 1;
 ```
+## Question 25
+``` sql
+25. Find the lowest priced pizza.
+
+SELECT 
+    pt.name, p.price
+FROM
+    pizza_types AS pt
+        JOIN
+    pizzas AS p ON pt.pizza_type_id = p.pizza_type_id
+ORDER BY p.price ASC
+LIMIT 1;
+``
 
 
 
