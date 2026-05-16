@@ -344,7 +344,7 @@ FROM
         JOIN
     pizzas AS p ON od.pizza_id = p.pizza_id
 GROUP BY p.size
-ORDER BY SUM(od.quantity) DESC
+ORDER BY Quantity DESC
 LIMIT 1
 ;
 ```
