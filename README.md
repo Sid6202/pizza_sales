@@ -286,6 +286,21 @@ FROM
 GROUP BY pt.category
 ORDER BY Total_quantity;
 ```
+## Question 24
+``` sql
+24. Find the highest priced pizza.
+
+SELECT  pt.name,
+p.price
+FROM
+    pizza_types AS pt
+        JOIN
+    pizzas AS p ON pt.pizza_type_id = p.pizza_type_id
+
+    order by p.price desc
+    limit 1;
+```
+
 
 
 
