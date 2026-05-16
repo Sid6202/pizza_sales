@@ -255,3 +255,19 @@ FROM
     order by revenue desc
     ;
 ```
+## Question 22
+``` sql
+22. Find top 3 except 1 pizza categories by revenue.
+
+SELECT 
+    category, ROUND(SUM(od.quantity * p.price), 2) AS revenue
+FROM
+    pizza_types AS pt
+        JOIN
+    pizzas p ON pt.pizza_type_id = p.pizza_type_id
+        JOIN
+    order_details AS od ON p.pizza_id = od.pizza_id
+GROUP BY category
+ORDER BY revenue
+LIMIT 3 OFFSET 1;
+```
