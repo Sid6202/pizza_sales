@@ -209,7 +209,7 @@ GROUP BY HOUR(o.time)
 ORDER BY quantity DESC
 LIMIT 1;
 ```
-## question 19
+## Question 19
 ```sql
 19. Calculate average pizzas ordered per day.
 
@@ -222,4 +222,20 @@ FROM
         orders AS o
     LEFT JOIN order_details AS od ON o.order_id = od.order_id
     GROUP BY o.date) AS t;
+```
+## Question 20
+```sql
+20. Find monthly revenue trends.
+
+SELECT 
+    MONTHNAME(o.date) AS Months,
+    ROUND(SUM(od.quantity * p.price), 2) AS Revenue
+FROM
+    orders AS o
+        JOIN
+    order_details AS od ON o.order_id = od.order_id
+        JOIN
+    pizzas p ON od.pizza_id = p.pizza_id
+GROUP BY months
+ORDER BY Revenue;
 ```
