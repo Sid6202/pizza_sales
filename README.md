@@ -312,8 +312,27 @@ FROM
     pizzas AS p ON pt.pizza_type_id = p.pizza_type_id
 ORDER BY p.price ASC
 LIMIT 1;
-``
+```
+## Question 26
+```sql
+26. Create a report showing pizza name, size, quantity sold, and total revenue.
 
+
+SELECT 
+    pt.name,
+    p.size,
+    SUM(od.quantity) AS Quantity,
+    ROUND(SUM(p.price * od.quantity), 2) AS Revenue
+FROM
+    pizza_types AS pt
+        JOIN
+    pizzas AS p ON pt.pizza_type_id = p.pizza_type_id
+        JOIN
+    order_details AS od ON p.pizza_id = od.pizza_id
+        JOIN
+    orders AS o ON od.order_id = o.order_id
+GROUP BY pt.name , p.size;
+```
 
 
 
