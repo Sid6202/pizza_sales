@@ -333,7 +333,21 @@ FROM
     orders AS o ON od.order_id = o.order_id
 GROUP BY pt.name , p.size;
 ```
+## Question 27
+``` sql
+27. Find customers' favorite pizza size based on total quantity sold.
 
+SELECT 
+    p.size, SUM(od.quantity) AS Quantity
+FROM
+    order_details AS od
+        JOIN
+    pizzas AS p ON od.pizza_id = p.pizza_id
+GROUP BY p.size
+ORDER BY quantity DESC
+LIMIT 1
+;
+```
 
 
 
