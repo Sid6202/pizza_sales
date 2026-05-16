@@ -209,4 +209,17 @@ GROUP BY HOUR(o.time)
 ORDER BY quantity DESC
 LIMIT 1;
 ```
+## question 19
+```sql
+19. Calculate average pizzas ordered per day.
 
+SELECT 
+    ROUND(AVG(daily_total), 2) AS avg_pizzas_per_day
+FROM
+    (SELECT 
+        o.date, SUM(od.quantity) AS daily_total
+    FROM
+        orders AS o
+    LEFT JOIN order_details AS od ON o.order_id = od.order_id
+    GROUP BY o.date) AS t;
+```
