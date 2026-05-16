@@ -338,13 +338,13 @@ GROUP BY pt.name , p.size;
 27. Find customers' favorite pizza size based on total quantity sold.
 
 SELECT 
-    p.size, SUM(od.quantity) AS Quantity
+    p.size, SUM(od.quantity) AS quantity
 FROM
     order_details AS od
         JOIN
     pizzas AS p ON od.pizza_id = p.pizza_id
 GROUP BY p.size
-ORDER BY Quantity DESC
+ORDER BY quantity DESC
 LIMIT 1
 ;
 ```
