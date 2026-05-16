@@ -271,3 +271,23 @@ GROUP BY category
 ORDER BY revenue
 LIMIT 3 OFFSET 1;
 ```
+## Question 23
+```sql
+23. Find total number of pizzas sold by category.
+
+SELECT 
+    pt.category, SUM(od.quantity) AS Total_quantity
+FROM
+    pizza_types AS pt
+        JOIN
+    pizzas AS p ON pt.pizza_type_id = p.pizza_type_id
+        JOIN
+    order_details AS od ON p.pizza_id = od.pizza_id
+GROUP BY pt.category
+ORDER BY Total_quantity;
+```
+
+
+
+
+
