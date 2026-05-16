@@ -239,3 +239,19 @@ FROM
 GROUP BY months
 ORDER BY Revenue;
 ```
+## Question 21
+```sql
+21. Find which pizza size generated the highest revenue.
+
+SELECT 
+p.size ,round(sum(p.price*od.quantity),2)as revenue
+FROM
+    orders AS o
+        JOIN
+    order_details AS od ON o.order_id = od.order_id
+        JOIN
+    pizzas p ON od.pizza_id = p.pizza_id
+    group by size
+    order by revenue desc
+    ;
+```
